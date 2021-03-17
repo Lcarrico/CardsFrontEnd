@@ -1,0 +1,28 @@
+
+h1{
+    grid-area:title;
+    text-align: center;
+}
+h3{
+    grid-area:heading;
+    text-align: center;
+}
+
+.loginScreen { 
+    grid-area: loginScreen;
+    border: 3px solid #f1f1f1;
+    background-color:rgb(255, 255, 255);
+    display:block;
+    padding: 20px;
+
+    width:100%
+}
+
+.grid-container{
+    display:grid;
+    grid-template-areas: 
+        'title title title'
+        'h3 h3 h3'
+        '. loginScreen .';
+    grid-gap: 20px;
+}
