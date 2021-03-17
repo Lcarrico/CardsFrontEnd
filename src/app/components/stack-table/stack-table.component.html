@@ -1,0 +1,16 @@
+
+<h4>Flash Card Stacks</h4>
+<table>
+    <thead><th>ID</th><th>Stack Name</th><th>Description</th><th>Creator ID</th><th>Cards</th><th>Learners</th></thead>
+    <tbody>
+        <tr *ngFor ="let stack of stacks">
+            <td>{{stack.stackId}}</td>
+            <td>{{stack.name}}</td>
+            <td>{{stack.description}}</td>
+            <td>{{stack.creatorId}}</td>
+            <td>Cards</td>
+            <td>Learners</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="refreshStacks()">Get All Stacks</button>
