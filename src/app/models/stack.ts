@@ -8,8 +8,7 @@ export class Stack{
         public name:string,
         public description:string,
         public creatorId:number,
-        public cards:Card[],
-        public learners:Learner[]
+        public cards:Card[]
     ){}
     
 }
