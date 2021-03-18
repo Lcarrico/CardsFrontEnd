@@ -14,8 +14,13 @@ export class LearnerService {
     return learner;
   }
 
-  async getLearnerByUsername(id:number){
+  async getLearnerById(id:number){
     const learners:Learner[] = await this.http.get<Learner[]>(`http://34.122.220.146:8080/learners/${id}`).toPromise();
+    return learners;
+  }
+
+  async getLearnerByUsernameAndPassword(username:string, password:string){
+    const learners:Learner[] = await this.http.get<Learner[]>(`http://34.122.220.146:8080/learners/${username}`).toPromise();
     return learners;
   }
 
@@ -24,7 +29,7 @@ export class LearnerService {
     return learner;
   }
 
-  async deleteCard(learner:Learner){
-    return await this.http.delete(`http://34.122.220.146:8080/learners/${learner.cardId}`).toPromise();
+  async deleteLearner(learner:Learner){
+    return await this.http.delete(`http://34.122.220.146:8080/learners/${learner.learnerId}`).toPromise();
   }
 }

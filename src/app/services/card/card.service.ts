@@ -17,8 +17,8 @@ export class CardService {
   }
 
   async getCardById(id:number){
-    const cards:Card[] = await this.http.get<Card[]>(`http://34.122.220.146:8080/cards/${id}`).toPromise();
-    return cards;
+    const card:Card = await this.http.get<Card>(`http://34.122.220.146:8080/cards/${id}`).toPromise();
+    return card;
   }
 
   async getAllCards(){
