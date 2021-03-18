@@ -1,0 +1,12 @@
+
+<label for="stackNameInput">Stack Name: </label>
+<input id="stackNameInput" type="text" placeholder="e.g. Java" [(ngModel)]="stackName">
+
+<label for="descriptionInput">Description: </label>
+<input id="descriptionInput" type="text" placeholder="e.g. Revature notes from 2102GCP batch" [(ngModel)]="description">
+
+<button (click)="createStack">Create!</button>
+
+<app-stack-table *ngIf="showAllStacks"></app-stack-table>
+
+
