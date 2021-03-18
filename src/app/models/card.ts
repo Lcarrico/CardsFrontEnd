@@ -4,7 +4,6 @@ export class Card{
         public question:string,
         public answer:string,
         public creatorId:number,
-        public stackId:number,
-        public tags:string[],
+        public tags:string[]
     ){}
 }
