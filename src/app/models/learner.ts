@@ -5,6 +5,5 @@ export class Learner{
         public learnerId:number,
         public username:string,
         public password:string,
-        public stacks:Stack[]
     ){}
 }
