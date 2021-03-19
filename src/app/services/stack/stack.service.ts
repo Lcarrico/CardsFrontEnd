@@ -39,6 +39,7 @@ export class StackService {
   // TODO these need to be changed due to the change in database.
   
   // Services for Cards in Stacks
+
   // async getAllCardsFromStack(stackId:number){
   //   const stack:Stack = await this.getStackById(stackId);
   //   return stack.cards;
