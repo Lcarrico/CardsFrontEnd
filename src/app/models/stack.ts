@@ -6,9 +6,7 @@ export class Stack{
         public stackId:number,
         public name:string,
         public description:string,
-        public creatorId:number,
         public cards:Card[],
-        public tags:Tag[]        
     ){}
     
 }

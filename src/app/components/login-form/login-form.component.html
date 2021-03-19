@@ -1,11 +1,29 @@
-<div class="login-form">
-    <label for="usernameInput">Username: </label>
-    <input id="usernameInput" type="text" placeholder="Enter username">
-</div>
+<!-- 
+  <mat-form-field appearance="fill">
+    <mat-label>Enter Username</mat-label>
+    <input matInput placeholder="Enter Username">
+  </mat-form-field>
+  <br/>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input matInput placeholder="Enter Password" type="password">
+  </mat-form-field>
+  <br/>
+  <button (click)="login()" mat-raised-button color="primary">Log In</button><br> -->
 
-<div class="login-form">
-    <label for="passwordInput">Password: </label>
-    <input id="passwordInput" type="text" placeholder="Enter password">
-</div>
 
-<button (click)="login()">Login</button>
+  <mat-form-field appearance="fill">
+    <mat-label>Input</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="one">First option</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>

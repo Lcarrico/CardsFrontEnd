@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Stack } from 'src/app/models/stack';
-import { StackService } from 'src/app/services/stack.service';
+import { StackService } from 'src/app/services/stack/stack.service';
 
 @Component({
   selector: 'app-stack',
@@ -21,7 +21,7 @@ export class StackComponent implements OnInit {
   }
 
   async createStack(){
-    let stack:Stack = new Stack(0,this.stackName,this.description,0,[]);
+    let stack:Stack = new Stack(0,this.stackName,this.description,[]);
     stack = await this.stackService.createStack(stack);
     // this._snackBar.open("Created a new Stack","Close",{duration:3000})
     this.showAllStacks=true;

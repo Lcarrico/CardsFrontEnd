@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Card } from '../models/card';
-import { Stack } from '../models/stack';
+import { Card } from '../../models/card';
+import { Stack } from '../../models/stack';
 
 @Injectable({
   providedIn: 'root'
