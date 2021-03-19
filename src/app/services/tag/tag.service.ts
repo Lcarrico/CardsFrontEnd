@@ -21,9 +21,9 @@ export class TagService {
     return tags;
   }
 
-  async searchTagsByName(tagName:string){
-    const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags?tagName=${tagName}`).toPromise();
-    return tags;
+  async getTagByName(tagName:string){
+    const tag:Tag = await this.http.get<Tag>(`http://34.122.220.146:8080/tags?tagName=${tagName}`).toPromise();
+    return tag;
   }
 
   async updateTag(tag:Tag){
@@ -31,7 +31,12 @@ export class TagService {
     return tag;
   }
 
-  async deleteTag(tag:Tag){
+  async removeTag(tag:Tag){
     return await this.http.delete(`http://34.122.220.146:8080/tags/${tag.tagId}`).toPromise();
+  }
+
+  async getAllTags(){
+    const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags`).toPromise();
+    return tags;
   }
 }

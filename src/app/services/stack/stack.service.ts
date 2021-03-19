@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Card } from '../models/card';
-import { Stack } from '../models/stack';
+import { Card } from '../../models/card';
+import { Stack } from '../../models/stack';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,7 @@ export class StackService {
     return stack;
   }
 
-  async deleteStack(stackId:number):Promise<Object>{
+  async removeStack(stackId:number):Promise<Object>{
     const result = await this.http.delete(`http://34.122.220.146:8080/stacks/${stackId}`).toPromise();
     return result;
   }

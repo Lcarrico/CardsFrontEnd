@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Stack } from 'src/app/models/stack';
-import { StackService } from 'src/app/services/stack.service';
+import { StackService } from 'src/app/services/stack/stack.service';
 
 @Component({
   selector: 'app-stack-table',
