@@ -27,6 +27,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';import { MatCommonModule, MatLineModule } from '@angular/material/core';
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 @NgModule({
@@ -44,8 +47,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';import { MatCommonModule
     BrowserAnimationsModule,
     HttpClientModule,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     FormsModule
 =======
+=======
+>>>>>>> Stashed changes
     FlexLayoutModule,
     MatFormFieldModule,
     FormsModule,

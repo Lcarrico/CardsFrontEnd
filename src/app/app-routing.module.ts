@@ -11,6 +11,9 @@ const routes: Routes = [
   {path:"stack",component:StackComponent},
   {path:"cred",component:CredentialCardComponent},
   {path:"**",component:LauncherComponent}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ];
 
