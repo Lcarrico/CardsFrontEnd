@@ -36,31 +36,31 @@ export class StackService {
     return result;
   }
 
-  // Services for Cards in Stacks
-  async getAllCardsFromStack(stackId:number){
-    const stack:Stack = await this.getStackById(stackId);
-    return stack.cards;
-  }
+  // // Services for Cards in Stacks
+  // async getAllCardsFromStack(stackId:number){
+  //   const stack:Stack = await this.getStackById(stackId);
+  //   return stack.cards;
+  // }
 
-  async getCardByIdFromStack(stackId:number,cardId:number){
-    const stack:Stack = await this.getStackById(stackId);
-    const cards:Card[] = stack.cards;
-    const resultCard = cards.find(card => card.cardId === cardId);
-    return resultCard;
-  }
+  // async getCardByIdFromStack(stackId:number,cardId:number){
+  //   const stack:Stack = await this.getStackById(stackId);
+  //   const cards:Card[] = stack.cards;
+  //   const resultCard = cards.find(card => card.cardId === cardId);
+  //   return resultCard;
+  // }
 
-  async addCardToStack(stack:Stack,card:Card):Promise<Stack>{
-    stack.cards.push(card);
-    const updatedStack:Stack = await this.updateStack(stack);
-    return updatedStack;
-  }
+  // async addCardToStack(stack:Stack,card:Card):Promise<Stack>{
+  //   stack.cards.push(card);
+  //   const updatedStack:Stack = await this.updateStack(stack);
+  //   return updatedStack;
+  // }
 
-  async removeCardFromStack(stack:Stack,card:Card):Promise<Stack>{
-    const cardIndex = stack.cards.map(function(card) {return card.cardId;}).indexOf(card.cardId);
-    stack.cards.splice(cardIndex,1);
-    const updatedStack:Stack = await this.http.put<Stack>(`http://34.122.220.146:8080/stacks/${stack.stackId}`,stack).toPromise();
-    return updatedStack;
-  }
+  // async removeCardFromStack(stack:Stack,card:Card):Promise<Stack>{
+  //   const cardIndex = stack.cards.map(function(card) {return card.cardId;}).indexOf(card.cardId);
+  //   stack.cards.splice(cardIndex,1);
+  //   const updatedStack:Stack = await this.http.put<Stack>(`http://34.122.220.146:8080/stacks/${stack.stackId}`,stack).toPromise();
+  //   return updatedStack;
+  // }
 
   
 }

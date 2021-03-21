@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { Learner } from 'src/app/models/learner';
+import { JwtHelperService } from "@auth0/angular-jwt";
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class JwtService {
   constructor(private http:HttpClient) { }
 
   login(username:string,password:string) {
-    const learner:Learner = new Learner(0,username,password,[]);
+    const learner:Learner = new Learner(0,username,password);
     const details={
       body:JSON.stringify(learner)
     }
@@ -22,7 +24,7 @@ export class JwtService {
   }
 
   register(username:string,password:string) {
-    const learner:Learner = new Learner(0,username,password,[]);
+    const learner:Learner = new Learner(0,username,password);
     const details={
       body:JSON.stringify(learner)
     }
