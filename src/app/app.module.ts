@@ -10,6 +10,9 @@ import { StackComponent } from './components/stack/stack.component';
 import { StackTableComponent } from './components/stack-table/stack-table.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { CardViewComponent } from './components/card-view/card-view/card-view.component';
+import {MatCardModule} from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,17 @@ import { FormsModule } from '@angular/forms';
     LoginPageComponent,
     LoginFormComponent,
     StackComponent,
-    StackTableComponent
+    StackTableComponent,
+    CardViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
