@@ -4,6 +4,9 @@ import { CredentialCardComponent } from './components/credential-card/credential
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LauncherComponent } from './components/launcher/launcher.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { DashComponent } from './components/schematics/dash/dash.component';
+import { DragdropComponent } from './components/schematics/dragdrop/dragdrop.component';
+import { NavComponent } from './components/schematics/nav/nav.component';
 import { StackComponent } from './components/stack/stack.component';
 
 const routes: Routes = [

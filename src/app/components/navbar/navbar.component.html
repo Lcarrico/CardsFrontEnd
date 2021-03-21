@@ -1,11 +1,24 @@
-<!-- Simple nav bar configuration at the top of each page -->
-<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-    <div class="container">
-        <a class="navbar-brand">Reva-Study Cards</a>
-        <ul class="nav navbar-nav" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="stack">Stacks</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="study">Study</a></li>
-        </ul>
-    </div>
-</nav>
+
+<mat-toolbar color="primary" >
+    <span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </span>
+    <span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>home</mat-icon>
+        </button>
+    </span>
+    <span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+    </span>
+    <span></span>
+    <span style="align-items: flex-end;">
+        <button mat-icon-button aria-label="Example icon-button with share icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </span>
+  </mat-toolbar>

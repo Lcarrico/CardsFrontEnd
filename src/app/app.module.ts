@@ -22,7 +22,20 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { CredentialCardComponent } from './components/credential-card/credential-card.component';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { DashComponent } from './dash/dash.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { DragdropComponent } from './components/schematics/dragdrop/dragdrop.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -35,6 +48,9 @@ import { CredentialCardComponent } from './components/credential-card/credential
     LauncherComponent,
     NavbarComponent,
     CredentialCardComponent,
+    NavComponent,
+    DashComponent,
+    DragdropComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +59,13 @@ import { CredentialCardComponent } from './components/credential-card/credential
     HttpClientModule,
     MatFormFieldModule,
     FormsModule,
+    MatChipsModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatTableModule,
     MatSelectModule,
     MatTabsModule,
     MatGridListModule,
@@ -52,7 +73,12 @@ import { CredentialCardComponent } from './components/credential-card/credential
       config: {
         tokenGetter: function  tokenGetter() {return localStorage.getItem('access_token');}, allowedDomains: ['localhost:3000'], disallowedRoutes: ['http://localhost:3000/auth/login']
       }
-    })
+    }),
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatMenuModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
