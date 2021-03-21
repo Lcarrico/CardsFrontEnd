@@ -11,7 +11,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-import { FlexLayoutModule } from '@angular/flex-layout';import { MatCommonModule, MatLineModule } from '@angular/material/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCommonModule, MatLineModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
