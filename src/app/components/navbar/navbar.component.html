@@ -1,24 +1,20 @@
 
-<mat-toolbar color="primary" >
-    <span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-        </button>
-    </span>
-    <span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>home</mat-icon>
-        </button>
-    </span>
-    <span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-    </span>
-    <span></span>
-    <span style="align-items: flex-end;">
-        <button mat-icon-button aria-label="Example icon-button with share icon">
-            <mat-icon>person</mat-icon>
-        </button>
-    </span>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+    <button mat-icon-button >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Revature Study Cards</span>
+    <span class="spacer"></span>
+    <mat-form-field appearance="legacy" floatLabel="never">
+      <input matInput placeholder="Search for Subjects" [(ngModel)]="searchString">
+    </mat-form-field>
+    <button mat-raised-button color="basic" >GO</button>
+    <button mat-icon-button >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button >
+      <mat-icon>share</mat-icon>
+    </button>
+    
+    
+</mat-toolbar>

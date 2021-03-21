@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { JwtModule } from '@auth0/angular-jwt';
-
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StackComponent } from './components/stack/stack.component';
 import { StackTableComponent } from './components/stack-table/stack-table.component';
+<<<<<<< Updated upstream
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+=======
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { LauncherComponent } from './components/launcher/launcher.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,20 +22,15 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTableModule} from '@angular/material/table';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import { CredentialCardComponent } from './components/credential-card/credential-card.component';
-import { NavComponent } from './nav/nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { DashComponent } from './dash/dash.component';
-import { MatMenuModule } from '@angular/material/menu';
-import { DragdropComponent } from './components/schematics/dragdrop/dragdrop.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';import { MatCommonModule, MatLineModule } from '@angular/material/core';
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -43,42 +38,39 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     LoginPageComponent,
     LoginFormComponent,
     StackComponent,
-    StackTableComponent,
-    RegistrationFormComponent,
-    LauncherComponent,
-    NavbarComponent,
-    CredentialCardComponent,
-    NavComponent,
-    DashComponent,
-    DragdropComponent,
+    StackTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatToolbarModule,
     BrowserAnimationsModule,
     HttpClientModule,
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    FormsModule
+=======
+=======
+>>>>>>> Stashed changes
+    FlexLayoutModule,
     MatFormFieldModule,
     FormsModule,
-    MatChipsModule,
+    MatLineModule,
+    MatCommonModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatTableModule,
+    MatDividerModule,
     MatSelectModule,
     MatTabsModule,
+    MatInputModule,
+    MatIconModule,
     MatGridListModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: function  tokenGetter() {return localStorage.getItem('access_token');}, allowedDomains: ['localhost:3000'], disallowedRoutes: ['http://localhost:3000/auth/login']
       }
-    }),
-    LayoutModule,
-    MatSidenavModule,
-    MatListModule,
-    MatMenuModule,
-    DragDropModule
+    })
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]

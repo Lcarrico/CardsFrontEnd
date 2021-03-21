@@ -21,11 +21,9 @@ export class StackComponent implements OnInit {
   }
 
   async createStack(){
-    let stack:Stack = new Stack(0,this.stackName,this.description,[]);
+    let stack:Stack = new Stack(0,this.stackName,this.description);
     stack = await this.stackService.createStack(stack);
     // this._snackBar.open("Created a new Stack","Close",{duration:3000})
     this.showAllStacks=true;
   }
-
-
 }

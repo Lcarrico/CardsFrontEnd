@@ -31,7 +31,7 @@ export class CardService {
     return card;
   }
 
-  async deleteCard(card:Card){
+  async removeCard(card:Card){
     return await this.http.delete(`http://34.122.220.146:8080/cards/${card.cardId}`).toPromise();
   }
 }

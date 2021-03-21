@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CredentialCardComponent } from './components/credential-card/credential-card.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { LauncherComponent } from './components/launcher/launcher.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
-import { DashComponent } from './components/schematics/dash/dash.component';
-import { DragdropComponent } from './components/schematics/dragdrop/dragdrop.component';
-import { NavComponent } from './components/schematics/nav/nav.component';
-import { StackComponent } from './components/stack/stack.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 const routes: Routes = [
+<<<<<<< Updated upstream
+  {path:"**",component:LoginPageComponent}
+=======
   {path:"login",component:LoginFormComponent},
   {path:"home",component:HomePageComponent},
   {path:"stack",component:StackComponent},
   {path:"cred",component:CredentialCardComponent},
   {path:"**",component:LauncherComponent}
-
-
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 ];
 
 @NgModule({

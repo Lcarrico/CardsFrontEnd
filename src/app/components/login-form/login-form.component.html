@@ -1,15 +1,18 @@
-<div class="login-container">
+
+<div class="parent">
   <mat-form-field appearance="fill">
     <mat-label>Enter Username</mat-label>
-    <input matInput placeholder="Enter Username">
+    <input matInput placeholder="Enter Username" [(ngModel)] = "username">
   </mat-form-field>
-
   <br/>
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
-    <input matInput placeholder="Enter Password" type="password">
+    <input matInput placeholder="Enter Password" type="password" [(ngModel)] = "password">
   </mat-form-field>
-  
   <br/>
   <button (click)="login()" mat-raised-button color="primary">Log In</button><br>
+<<<<<<< Updated upstream
 </div>
+=======
+</div>
+>>>>>>> Stashed changes

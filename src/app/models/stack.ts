@@ -4,9 +4,8 @@ import { Tag } from 'src/app/models/tag';
 export class Stack{
     constructor(
         public stackId:number,
-        public name:string,
-        public description:string,
-        public cards:Card[],
+        public stackName:string,
+        public description:string       
     ){}
     
 }
