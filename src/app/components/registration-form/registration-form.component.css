@@ -1,0 +1,15 @@
+mat-form-field {
+    width: 90%;
+}
+
+button{
+    width: 50%
+}
+
+
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
