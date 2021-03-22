@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CardViewComponent } from './components/card-view/card-view/card-view.component';
+import { CardViewComponent } from './components/card-view/card-view.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { CredentialCardComponent } from './components/credential-card/credential-card.component';
 import { HomePageComponent } from './components/home-page/home-page.component';

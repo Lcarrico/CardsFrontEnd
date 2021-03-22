@@ -9,7 +9,7 @@ import { Card } from 'src/app/models/card';
 export class CardViewComponent implements OnInit {
   showingTitle = "Question";
   showingContent = "What is 1+1?";
-  card:Card = new Card(0, "How can Leo be so handsome?", "he's built different");
+  card:Card = new Card(0, "What is 1+1?", "2");
 
   flipped = false;
   flipping = false;

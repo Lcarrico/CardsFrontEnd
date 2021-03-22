@@ -22,7 +22,7 @@ import { StackComponent } from './components/stack/stack.component';
 import { StackTableComponent } from './components/stack-table/stack-table.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-import { CardViewComponent } from './components/card-view/card-view/card-view.component';
+import { CardViewComponent } from './components/card-view/card-view.component';
 import { CommonModule } from '@angular/common';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { LauncherComponent } from './components/launcher/launcher.component';
