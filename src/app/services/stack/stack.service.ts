@@ -31,15 +31,12 @@ export class StackService {
     return stack;
   }
 
-  async removeStack(stackId:number):Promise<Object>{
+  async deleteStack(stackId:number):Promise<Object>{
     const result = await this.http.delete(`http://34.122.220.146:8080/stacks/${stackId}`).toPromise();
     return result;
   }
 
-  // TODO these need to be changed due to the change in database.
-  
-  // Services for Cards in Stacks
-
+  // // Services for Cards in Stacks
   // async getAllCardsFromStack(stackId:number){
   //   const stack:Stack = await this.getStackById(stackId);
   //   return stack.cards;
