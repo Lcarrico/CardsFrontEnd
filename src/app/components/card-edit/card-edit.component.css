@@ -1,0 +1,26 @@
+.card {
+    max-width: 500px;
+    /* min-height: 200px; */
+}
+
+.chip-list {
+    width: 100%;     
+}
+
+mat-chip{
+    font-size: xx-small;
+    height: 20px !important;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+form {
+    width: 100%;
+}
+
+textarea {
+    height: 200px;
+    font-size:xx-large;
+}

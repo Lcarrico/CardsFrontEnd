@@ -14,6 +14,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCommonModule, MatLineModule } from '@angular/material/core';
 
+import {MatChipsModule} from '@angular/material/chips';
+
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
@@ -31,6 +33,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { JwtModule } from "@auth0/angular-jwt";
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { CardEditComponent } from './components/card-edit/card-edit.component';
 
 
 @NgModule({
@@ -45,7 +48,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     LauncherComponent,
     CredentialCardComponent,
     NavbarComponent,
-    HomePageComponent
+    HomePageComponent,
+    CardEditComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +72,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     MatInputModule,
     MatIconModule,
     MatGridListModule,
+    MatChipsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: function  tokenGetter() {return localStorage.getItem('access_token');}, allowedDomains: ['localhost:3000'], disallowedRoutes: ['http://localhost:3000/auth/login']

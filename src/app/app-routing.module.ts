@@ -7,6 +7,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LauncherComponent } from './components/launcher/launcher.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { StackComponent } from './components/stack/stack.component';
+import { CardEditComponent } from './components/card-edit/card-edit.component';
 
 const routes: Routes = [
   {path:"card-view", component:CardViewComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:"login-page",component:LoginPageComponent},
   {path:"stack",component:StackComponent},
   {path:"cred",component:CredentialCardComponent},
+  {path:"card-edit",component:CardEditComponent},
   {path:"**",component:LauncherComponent}
 ];
 
