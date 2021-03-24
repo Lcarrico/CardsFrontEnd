@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { Learner } from 'src/app/models/learner';
@@ -12,34 +12,21 @@ export class JwtService {
 
   constructor(private http:HttpClient) { }
 
-  login(username:string,password:string) {
-    const learner:Learner = new Learner(0,username,password);
-    const details={
-      body:JSON.stringify(learner)
-    }
-    return this.http.post<{
-      access_token:string}>('http://34.122.220.146:8080/login', details)
-        .pipe(tap(res => {localStorage.setItem('access_token', res.access_token);
-    }))
+  async login(learner:Learner):Promise<string> {
+    return await this.http.post<string>('http://34.122.220.146:8080/login', learner, {responseType: "text" as "json"}).toPromise();
   }
 
-  register(username:string,password:string) {
-    const learner:Learner = new Learner(0,username,password);
-    const details={
-      body:JSON.stringify(learner)
-    }
-    return this.http.post<{
-      access_token:string}>('http://34.122.220.146:8080/login/register',details)
-        .pipe(tap(res => {learner.username,learner.password}))
+  async register(learner:Learner):Promise<Learner> {
+    return await this.http.post<Learner>('http://34.122.220.146:8080/learners',learner).toPromise();
   }
 
-  logout() {
-    localStorage.removeItem('access_token');
-  }
+  // logout() {
+  //   document.cookie.replace
+  // }
 
-  public get loggedIn(): boolean{
-    return localStorage.getItem('access_token') !==  null;
-  }
+  // public get loggedIn(): boolean{
+  //   return localStorage.getItem('access_token') !==  null;
+  // }
 
 }
 

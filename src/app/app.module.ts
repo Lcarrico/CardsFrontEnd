@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCommonModule, MatLineModule } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {MatChipsModule} from '@angular/material/chips';
 
@@ -55,6 +56,7 @@ import { CardEditComponent } from './components/card-edit/card-edit.component';
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,

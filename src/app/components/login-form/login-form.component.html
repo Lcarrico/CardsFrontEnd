@@ -8,8 +8,11 @@
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
     <input matInput placeholder="Enter Password" type="password" [(ngModel)] = "password">
+    <mat-error *ngIf="loginFail">Invalid Credentials</mat-error>
   </mat-form-field>
   <br/>
+  <p *ngIf="loginFail">Invalid Credentials!</p>
   <button (click)="login()" mat-raised-button color="primary">Log In</button><br>
 </div>
+
 

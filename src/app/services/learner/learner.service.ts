@@ -9,7 +9,7 @@ export class LearnerService {
 
   constructor(private http:HttpClient) { }
 
-  async createLearner(learner:Learner){
+  async createLearner(learner:Learner):Promise<Learner> {
     learner = await this.http.post<Learner>(`http://34.122.220.146:8080/learners`,learner).toPromise();
     return learner;
   }

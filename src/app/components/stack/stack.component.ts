@@ -26,4 +26,6 @@ export class StackComponent implements OnInit {
     // this._snackBar.open("Created a new Stack","Close",{duration:3000})
     this.showAllStacks=true;
   }
+
+  
 }
