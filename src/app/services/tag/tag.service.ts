@@ -17,7 +17,7 @@ export class TagService {
   }
 
   async getTagById(id:number){
-    const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags/${id}`).toPromise();
+    const tags:Tag = await this.http.get<Tag>(`http://34.122.220.146:8080/tags/${id}`).toPromise();
     return tags;
   }
 

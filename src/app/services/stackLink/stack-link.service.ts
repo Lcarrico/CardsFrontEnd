@@ -19,9 +19,9 @@ export class StackLinkService {
     return stackLink;
   }
 
-  async getStackLinkByLearnerId(learnerId:number){
-    const stackLink:StackLink = await this.http.get<StackLink>(`http://34.122.220.146:8080/stackLinks?learnerId=${learnerId}`).toPromise();
-    return stackLink;
+  async getStackLinksByLearnerId(learnerId:number){
+    const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks?learnerId=${learnerId}`).toPromise();
+    return stackLinks;
   }
 
   async createStackLink(stackLink:StackLink){

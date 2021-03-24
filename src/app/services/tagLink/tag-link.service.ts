@@ -18,8 +18,8 @@ export class TagLinkService {
     return tagLink;
   }
 
-  async getTagLinkByCardId(cardId:number){
-    const tagLink:TagLink = await this.http.get<TagLink>(`http://34.122.220.146:8080/tagLinks?cardId=${cardId}`).toPromise();
+  async getTagLinksByCardId(cardId:number){
+    const tagLink:TagLink[] = await this.http.get<TagLink[]>(`http://34.122.220.146:8080/tagLinks?cardId=${cardId}`).toPromise();
     return tagLink;
   }
 
