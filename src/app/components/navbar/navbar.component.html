@@ -3,7 +3,8 @@
     <button mat-icon-button >
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Revature Study Cards</span>
+    <button (click)="logOut()" mat-raised-button color="primary">Log Out</button>
+    <!-- <span>Revature Study Cards</span> -->
     <span class="spacer"></span>
     <mat-form-field appearance="legacy" floatLabel="never">
       <input matInput placeholder="Search for Subjects" [(ngModel)]="searchString">

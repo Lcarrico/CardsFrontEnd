@@ -1,14 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Learner } from 'src/app/models/learner';
+import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LearnerService {
 
-  constructor(private http:HttpClient) { }
+  jwt:string = this.jwtService.getJwtFromCookie()
 
+  constructor(
+    private http:HttpClient,
+    private jwtService:JwtService
+    ) { }
+    
   async createLearner(learner:Learner):Promise<Learner> {
     learner = await this.http.post<Learner>(`http://34.122.220.146:8080/learners`,learner).toPromise();
     return learner;

@@ -26,16 +26,14 @@ export class LoginFormComponent implements OnInit {
 
   async login(){
     const learner:Learner = new Learner(0,this.username,this.password);
-    const jwt:string = await this.jwtService.login(learner)
-
-    if(jwt==null){
-      console.log('HTTP Error')
-      this.loginFail=true;
+    const jwt: Object| null = await this.jwtService.login(learner)
+    if(jwt=="Error"){
+      alert("Invalid credentials");
+      return
     }else{
-      console.log(jwt);
-      document.cookie = "Authorization="+jwt+";"
       this._snackBar.open("Login successful!","Close",{duration:3000})
       this.router.navigate(['/home']);
     }
+
   }
 }

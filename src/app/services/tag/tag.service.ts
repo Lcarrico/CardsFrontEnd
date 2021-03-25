@@ -3,14 +3,20 @@ import { Injectable } from '@angular/core';
 import { Card } from 'src/app/models/card';
 import { Stack } from 'src/app/models/stack';
 import { Tag } from 'src/app/models/tag';
+import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagService {
 
-  constructor(private http:HttpClient) { }
+  jwt:string = this.jwtService.getJwtFromCookie()
 
+  constructor(
+    private http:HttpClient,
+    private jwtService:JwtService
+    ) { }
+    
   async createTag(tag:Tag){
     tag = await this.http.post<Tag>(`http://34.122.220.146:8080/tags`,tag).toPromise();
     return tag;
