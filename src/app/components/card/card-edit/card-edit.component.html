@@ -6,7 +6,7 @@
         <br>
         <form class="question-form">
           <mat-form-field class="form-field">
-          <textarea matInput placeholder="Enter your question here..."></textarea>
+          <textarea matInput placeholder="Enter your question here..." [(ngModel)]="card.question" [ngModelOptions]="{standalone: true}"></textarea>
           </mat-form-field>
         </form>
       </mat-tab>
@@ -15,7 +15,7 @@
         <br>
         <form class="answer-form">
           <mat-form-field class="form-field">
-          <textarea matInput placeholder="Answer your question here..."></textarea>
+          <textarea matInput placeholder="Answer your question here..." [(ngModel)]="card.answer" [ngModelOptions]="{standalone: true}"></textarea>
           </mat-form-field>
         </form>
       </mat-tab>

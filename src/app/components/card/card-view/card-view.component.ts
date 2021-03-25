@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { Card } from 'src/app/models/card';
+import { CardService } from 'src/app/services/card/card.service';
 
 @Component({
   selector: 'app-card-view',
@@ -9,15 +10,35 @@ import { Card } from 'src/app/models/card';
 export class CardViewComponent implements OnInit {
   showingTitle = "Question";
   showingContent = "What is 1+1?";
-  card:Card = new Card(0, "What is 1+1?", "2");
+  card:Card = new Card(0, "What is 1+1", "2");
+
+  @Input() cardId: string = "0";
 
   flipped = false;
   flipping = false;
-  constructor() { }
+  
+  constructor(private cardService:CardService) { 
+    
+  }
+
+  async setCard(){
+    const cardIdNum:number = Number(this.cardId)
+    if (cardIdNum != 0)
+      this.card = await this.cardService.getCardById(cardIdNum);
+    this.refresh();
+  }
+
+  refresh(){
+    if (this.showingTitle == "Question"){
+      this.showingContent = this.card.question;
+    } else if (this.showingTitle == "Answer") {
+      this.showingContent = this.card.answer;
+    }
+  }
 
   ngOnInit(): void {
-   this.showingContent = this.card.question;
-    // TODO set card to an actual card from http request
+    this.setCard();
+    this.showingContent = this.card.question;
   }
 
   toggleDisplay(){
