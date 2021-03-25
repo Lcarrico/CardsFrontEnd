@@ -1,13 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StackLink } from '../../models/stackLink';
+import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StackLinkService {
+  
+  jwt:string = this.jwtService.getJwtFromCookie()
 
-  constructor(private http:HttpClient) {}
+  constructor(
+    private http:HttpClient,
+    private jwtService:JwtService
+    ) { }
 
   async getAllStackLinks(){
     const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks`).toPromise();
@@ -19,8 +25,13 @@ export class StackLinkService {
     return stackLink;
   }
 
-  async getStackLinksByLearnerId(learnerId:number){
-    const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks?learnerId=${learnerId}`).toPromise();
+  async getStackLinksByLearnerId(learnerId:number):Promise<StackLink[]>{
+    const details = {
+      headers:{
+          "Authorization": this.jwt
+      }
+    }
+    const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks?learnerId=${learnerId}`,details).toPromise();
     return stackLinks;
   }
 
