@@ -17,6 +17,7 @@ const routes: Routes = [
   {path:"stack",component:StackComponent},
   {path:"cred",component:CredentialCardComponent},
   {path:"card-edit",component:CardEditComponent},
+  {path:"launcher",component:LauncherComponent},
   {path:"**",component:LauncherComponent}
 ];
 

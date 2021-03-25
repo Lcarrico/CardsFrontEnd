@@ -28,25 +28,13 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   async register(){
-    let learner:Learner = new Learner(0,this.username,this.password)
-    learner = await this.jwtService.register(learner)
-    if(learner.learnerId>0){
-      this.login();
+    const learner:Learner = new Learner(0,this.username,this.password)
+    const response:string = await this.jwtService.register(learner)
+    if(response=="Error"){
+      alert("That username is already taken. Please choose another username.");
+      return
     }else{
-      this.registrationFail=true;
-    }    
-  }
-
-  async login(){
-    let learner:Learner = new Learner(0,this.username,this.password);
-    const jwt:string = await this.jwtService.login(learner)
-
-    if(jwt==null){
-      console.log('HTTP Error')
-    }else{
-      console.log(jwt);
-      document.cookie = "Authorization="+jwt+";"
-      this._snackBar.open("Registration successful! You are now being redirected to the Learner's Dashboard.","Close",{duration:3000})
+      this._snackBar.open("Registration successful! You are now being redirected to the Learner Dashboard","Close",{duration:3000})
       this.router.navigate(['/home']);
     }
   }

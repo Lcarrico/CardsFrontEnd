@@ -2,14 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Card } from '../../models/card';
 import { Stack } from '../../models/stack';
+import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StackService {
 
-  constructor(private http:HttpClient) { }
+  jwt:string = this.jwtService.getJwtFromCookie()
 
+  constructor(
+    private http:HttpClient,
+    private jwtService:JwtService
+    ) { }
+
+    
   // CRUD Operations
   async createStack(stack:Stack):Promise<Stack>{
     stack = await this.http.post<Stack>("http://34.122.220.146:8080/stacks",stack).toPromise()

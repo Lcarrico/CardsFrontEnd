@@ -1,12 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TagLink } from 'src/app/models/tagLink';
+import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagLinkService {
-  constructor(private http:HttpClient) {}
+
+  jwt:string = this.jwtService.getJwtFromCookie()
+
+  constructor(
+    private http:HttpClient,
+    private jwtService:JwtService
+    ) { }
 
   async getAllTagLinks(){
     const tagLinks:TagLink[] = await this.http.get<TagLink[]>(`http://34.122.220.146:8080/tagLinks`).toPromise();

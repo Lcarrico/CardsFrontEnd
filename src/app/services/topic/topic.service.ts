@@ -1,14 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Topic } from 'src/app/models/topic';
+import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopicService {
 
-  constructor(private http:HttpClient) { }
+  jwt:string = this.jwtService.getJwtFromCookie()
 
+  constructor(
+    private http:HttpClient,
+    private jwtService:JwtService
+    ) { }
+    
   async getAllTopics(){
     const topics:Topic[] = await this.http.get<Topic[]>(`http://34.122.220.146:8080/topics`).toPromise();
     return topics;

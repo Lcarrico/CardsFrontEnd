@@ -31,7 +31,6 @@ import { RegistrationFormComponent } from './components/registration-form/regist
 import { LauncherComponent } from './components/launcher/launcher.component';
 import { CredentialCardComponent } from './components/credential-card/credential-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
 import { JwtModule } from "@auth0/angular-jwt";
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CardEditComponent } from './components/card-edit/card-edit.component';

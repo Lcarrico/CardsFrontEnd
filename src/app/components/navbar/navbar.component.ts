@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { JwtService } from 'src/app/services/jwt/jwt.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +11,18 @@ export class NavbarComponent implements OnInit {
 
   searchString:string = ""
 
-  constructor() { }
+  constructor(
+    private jwtService:JwtService,
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
     
+  }
+
+  logOut(){
+    this.jwtService.logOut();
+    this.router.navigate(['/launcher'])
   }
 
 }

@@ -1,13 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CardLink } from 'src/app/models/cardLink';
+import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardLinkService {
 
-  constructor(private http:HttpClient) {}
+  jwt:string = this.jwtService.getJwtFromCookie()
+
+  constructor(
+    private http:HttpClient,
+    private jwtService:JwtService
+    ) { }
 
   async getAllCardLinks(){
     const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`http://34.122.220.146:8080/cardLinks`).toPromise();
@@ -24,8 +30,13 @@ export class CardLinkService {
     return cardLinks;
   }
 
-  async getCardLinksByStackId(stackId:number){
-    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`http://34.122.220.146:8080/cardLinks?stackId=${stackId}`).toPromise();
+  async getCardLinksByStackId(stackId:number):Promise<CardLink[]>{
+    const details = {
+      headers:{
+          "Authorization": this.jwt
+      }
+    }
+    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`http://34.122.220.146:8080/cardLinks?stackId=${stackId}`,details).toPromise();
     return cardLinks;
   }
 
