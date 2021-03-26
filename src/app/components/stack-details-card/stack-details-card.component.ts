@@ -49,9 +49,10 @@ export class StackDetailsCardComponent implements OnInit {
     this.router.navigate(['/study',this.stack.stackId])
   }
 
-  goToStackEditPage(){
-    this.router.navigate(['/stack-view-page',this.stack.stackId])
+  goToEditPage(){
+    this.router.navigate(['/edit',this.stack.stackId])
   }
+
 
   shareByFriendId(): void {
     const dialogRef = this.dialog.open(ShareStackDialogComponent, {
@@ -61,7 +62,7 @@ export class StackDetailsCardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.friendId = result;
-      if(this.friendId==0){
+      if(this.friendId==undefined){
         return;
       }else{
         this.createStackLink();

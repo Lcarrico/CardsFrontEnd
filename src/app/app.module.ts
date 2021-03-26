@@ -43,6 +43,7 @@ import { StudyPageComponent } from './components/pages/study-page/study-page.com
 import { ShareStackDialogComponent } from './components/share-stack-dialog/share-stack-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
+import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     StackViewPageComponent,
     CardAddComponent,
     StudyPageComponent,
-    ShareStackDialogComponent
+    ShareStackDialogComponent,
+    EditPageComponent
   ],
   imports: [
     BrowserModule,

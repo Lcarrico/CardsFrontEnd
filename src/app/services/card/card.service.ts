@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Card } from '../../models/card';
 import { Tag } from '../../models/tag';
 import { JwtService } from '../jwt/jwt.service';
-import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'

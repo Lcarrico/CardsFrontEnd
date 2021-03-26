@@ -4,10 +4,12 @@
             <mat-label>Stack Name</mat-label>
             <input matInput [(ngModel)]="stackName">
         </mat-form-field>
+        <br>
         <mat-form-field appearance="fill">
             <mat-label>Description</mat-label>
             <textarea matInput [(ngModel)]="description"></textarea>
         </mat-form-field>
+        <br>
         <button mat-raised-button (click)="createStack()" color="primary">CREATE STACK</button>
 </div>
 

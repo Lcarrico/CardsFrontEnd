@@ -7,6 +7,9 @@ import { CardService } from 'src/app/services/card/card.service';
 import { TagService } from 'src/app/services/tag/tag.service';
 import { TagLinkService } from 'src/app/services/tagLink/tag-link.service';
 import { TagLink } from 'src/app/models/tagLink';
+import { CardLinkService } from 'src/app/services/cardLink/card-link.service';
+import { StackLinkService } from 'src/app/services/stackLink/stack-link.service';
+import { CardLink } from 'src/app/models/cardLink';
 
 @Component({
   selector: 'app-card-edit',
@@ -16,9 +19,11 @@ import { TagLink } from 'src/app/models/tagLink';
 export class CardEditComponent implements OnInit {
 
   _ref:any;
-  constructor(private cardService:CardService, private tagService:TagService, private tagLinkService:TagLinkService) { }
+  constructor(private cardService:CardService, private tagService:TagService, private tagLinkService:TagLinkService, 
+    private cardLinkService:CardLinkService) { }
 
   @Input() cardId: string = "0";
+  @Input() stackId: string = "0";
 
   ngOnInit(): void {
     this.setCard();
@@ -26,7 +31,6 @@ export class CardEditComponent implements OnInit {
   }
 
   card:Card = new Card(0, "Question?", "Answer")
-
   visible = true;
   selectable = true;
   removable = true;
@@ -96,6 +100,9 @@ export class CardEditComponent implements OnInit {
       this.card = await this.cardService.updateCard(this.card);
     }
 
+    this.cardLinkService.createCardLink(new CardLink(0, Number(this.card.cardId), 
+      Number(this.stackId)));
+      
     console.log(this.card);
 
     // // create the non-existing tags

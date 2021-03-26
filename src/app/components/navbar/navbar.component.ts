@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
 
   logOut(){
     this.jwtService.logOut();
-    // this.router.navigate(['/launcher'])
+    this.router.navigate(['/launcher'])
   }
 
   goToDashboard(){

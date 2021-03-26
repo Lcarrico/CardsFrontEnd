@@ -1,24 +1,11 @@
 <app-navbar></app-navbar>
 
-<div *ngIf="!studying">
-    <div class="stackInfo">
-        <mat-card>
-            <mat-card-header>
-              <mat-card-title>{{stack.stackName}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <p>
-                {{stack.description}}
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-fab color="primary">Start</button>
-            </mat-card-actions>
-          </mat-card>
-    </div>
-</div>
-<div *ngIf="studying" class="cardDisplay">
-    <div *ngFor="let link in cardLinks">
-      <app-card-grid stackId={{link.stackId}} mode=view></app-card-grid>
-    </div>
-</div>
+<br><br><br>
+
+<app-card-add stackId={{this.stackId}}></app-card-add>
+<br><br><br><br>
+<hr>
+
+<br><br>
+<h1> Edit Existing Cards </h1>
+<app-card-grid mode=edit stackId={{this.stackId}}></app-card-grid>

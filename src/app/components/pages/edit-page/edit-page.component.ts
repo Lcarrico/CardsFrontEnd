@@ -26,10 +26,10 @@ export class EditPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.stackId = Number(this.route.snapshot.paramMap.get("stackId"));
+
     // console.log(id);
     // this.getStack(id);
-    // console.log(this.stack);
-
+    console.log(this.stack);
   }
 
   async startStudying(){

@@ -14,8 +14,10 @@ import { CardGridComponent } from './components/card/card-grid/card-grid.compone
 import { StackViewPageComponent } from './components/pages/stack-view-page/stack-view-page.component';
 import { CardAddComponent } from './components/card/card-add/card-add.component';
 import { StudyPageComponent } from './components/pages/study-page/study-page.component';
+import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
 
 const routes: Routes = [
+  {path:"edit/:stackId", component:EditPageComponent},
   {path:"card-add", component:CardAddComponent},
   {path:"study/:stackId",component:StudyPageComponent},
   {path:"stack-view-page", component:StackViewPageComponent},

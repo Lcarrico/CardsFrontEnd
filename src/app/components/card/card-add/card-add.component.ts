@@ -1,4 +1,5 @@
-import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { componentFactoryName } from '@angular/compiler';
+import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { CardEditComponent } from '../card-edit/card-edit.component';
 
 @Component({
@@ -10,6 +11,8 @@ export class CardAddComponent implements OnInit {
   @ViewChild('container', { read: ViewContainerRef })
   container!: ViewContainerRef;
   
+  @Input() stackId = "0";
+
   cardEditComponentClass = CardEditComponent;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
@@ -18,9 +21,11 @@ export class CardAddComponent implements OnInit {
   }
 
   addCardEdit(){
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.cardEditComponentClass);
-    const component = this.container.createComponent(componentFactory);
-    // console.log(component);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.cardEditComponentClass);    
+    let component = this.container.createComponent(componentFactory);
+    
+    console.log(component.instance);
+    component.instance.stackId = this.stackId;
   }
 
 }
