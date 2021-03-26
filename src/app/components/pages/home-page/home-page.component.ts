@@ -1,14 +1,18 @@
 import { ɵparseCookieValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { throwIfEmpty } from 'rxjs/operators';
 import { Card } from 'src/app/models/card';
 import { CardLink } from 'src/app/models/cardLink';
 import { Stack } from 'src/app/models/stack';
 import { StackLink } from 'src/app/models/stackLink';
+import { Tag } from 'src/app/models/tag';
 import { CardService } from 'src/app/services/card/card.service';
 import { CardLinkService } from 'src/app/services/cardLink/card-link.service';
 import { JwtService } from 'src/app/services/jwt/jwt.service';
 import { StackService } from 'src/app/services/stack/stack.service';
 import { StackLinkService } from 'src/app/services/stackLink/stack-link.service';
+import { TagService } from 'src/app/services/tag/tag.service';
 
 @Component({
   selector: 'app-home-page',
@@ -30,7 +34,7 @@ export class HomePageComponent implements OnInit {
     private stackService:StackService,
     private jwtService:JwtService,
     private stackLinkService:StackLinkService,
-    private cardLinkService:CardLinkService
+    private cardLinkService:CardLinkService,
 
   ) { }
 
@@ -46,6 +50,7 @@ export class HomePageComponent implements OnInit {
     this.stackLinks.forEach(async (link:StackLink) => {
       this.myStacks.push(await this.stackService.getStackById(link.stackId));
     })
+    console.log(this.myStacks)
   }
 
   getCards(){
@@ -58,5 +63,4 @@ export class HomePageComponent implements OnInit {
       })
     })  
   }
-
 }

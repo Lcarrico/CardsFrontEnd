@@ -1,24 +1,24 @@
 
 <mat-toolbar color="primary">
-    <button mat-icon-button >
+    <!-- <button mat-icon-button >
       <mat-icon>menu</mat-icon>
-    </button>
-    <button (click)="logOut()" mat-raised-button color="primary">Log Out</button>
-    <!-- <span>Revature Study Cards</span> -->
+    </button> -->
+    <span>RevaFlash Study Cards</span>
+    <span><button mat-raised-button color="primary" *ngIf="loggedIn" (click)="goToDashboard()">DASHBOARD</button></span>
+    <span><button mat-raised-button color="primary" *ngIf="loggedIn" (click)="goToStudy()">STUDY</button></span>
+    
+    
     <span class="spacer"></span>
-    <mat-form-field appearance="legacy" floatLabel="never">
+    
+    <!-- <mat-form-field appearance="legacy" floatLabel="never">
       <input matInput placeholder="Search for Subjects" [(ngModel)]="searchString">
-    </mat-form-field>
-    <button mat-raised-button color="basic" >GO</button>
-    <button mat-icon-button >
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button >
-      <mat-icon>share</mat-icon>
-    </button>
-
-    <button mat-icon-button >
+    </mat-form-field> -->
+    <!-- <button mat-raised-button color="basic" >GO</button> -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>person</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button (click)="logOut()" mat-menu-item>Log Out</button>
+    </mat-menu>
     
 </mat-toolbar>

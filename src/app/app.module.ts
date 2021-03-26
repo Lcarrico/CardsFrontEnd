@@ -31,7 +31,6 @@ import { RegistrationFormComponent } from './components/login/registration-form/
 import { LauncherComponent } from './components/pages/launcher/launcher.component';
 import { CredentialCardComponent } from './components/login/credential-card/credential-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { JwtModule } from "@auth0/angular-jwt";
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { CardEditComponent } from './components/card/card-edit/card-edit.component';
 import { StackDetailsComponent } from './components/stack-details/stack-details.component';
@@ -39,7 +38,11 @@ import { StackDetailsCardComponent } from './components/stack-details-card/stack
 import { CardGridComponent } from './components/card/card-grid/card-grid.component';
 import { StackViewPageComponent } from './components/pages/stack-view-page/stack-view-page.component';
 import { CardAddComponent } from './components/card/card-add/card-add.component';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { StudyPageComponent } from './components/pages/study-page/study-page.component';
+import { ShareStackDialogComponent } from './components/share-stack-dialog/share-stack-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -59,14 +62,19 @@ import { CardAddComponent } from './components/card/card-add/card-add.component'
     StackDetailsCardComponent,
     CardGridComponent,
     StackViewPageComponent,
-    CardAddComponent
+    CardAddComponent,
+    StudyPageComponent,
+    ShareStackDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
+    MatMenuModule,
+    MatStepperModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     HttpClientModule,
     FormsModule,
     CommonModule,
@@ -83,12 +91,7 @@ import { CardAddComponent } from './components/card/card-add/card-add.component'
     MatInputModule,
     MatIconModule,
     MatGridListModule,
-    MatChipsModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: function  tokenGetter() {return localStorage.getItem('access_token');}, allowedDomains: ['localhost:3000'], disallowedRoutes: ['http://localhost:3000/auth/login']
-      }
-    })
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
