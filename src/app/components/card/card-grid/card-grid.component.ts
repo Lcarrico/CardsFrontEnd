@@ -14,7 +14,7 @@ export class CardGridComponent implements OnInit {
   
   @Input() stackId:string = "";
 
-  @Input() mode:string = "edit";
+  @Input() mode:string = "view";
   constructor(private cardLinkService:CardLinkService) {
    }
 

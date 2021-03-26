@@ -15,9 +15,10 @@ import { TagLink } from 'src/app/models/tagLink';
 })
 export class CardEditComponent implements OnInit {
 
+  _ref:any;
   constructor(private cardService:CardService, private tagService:TagService, private tagLinkService:TagLinkService) { }
 
-  @Input() cardId: string = "1";
+  @Input() cardId: string = "0";
 
   ngOnInit(): void {
     this.setCard();
@@ -33,9 +34,7 @@ export class CardEditComponent implements OnInit {
 
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   tags: Tag[] = [
-    new Tag(0, "Math"),
-    new Tag(1, "Pre-Alg"),
-    new Tag(2, "Elementary Math"),
+
   ];
 
   async setCard(){
@@ -75,5 +74,41 @@ export class CardEditComponent implements OnInit {
     if (index >= 0) {
       this.tags.splice(index, 1);
     }
+  }
+
+  async createNecessaryTags(){
+    this.addTagsToCard();
+  }
+
+  async addTagsToCard(){
+    let tagIds = this.tags.map((tag)=>{return tag.tagId});
+    console.log(tagIds);
+
+    let tagLinks = await this.tagLinkService.getTagLinksByCardId(Number(this.cardId));
+  }
+
+  async submit(){
+    if (Number(this.card.cardId) == 0){
+      // create the card
+      this.card = await this.cardService.createCard(this.card);
+    } else {
+      // update the card info
+      this.card = await this.cardService.updateCard(this.card);
+    }
+
+    console.log(this.card);
+
+    // // create the non-existing tags
+    // for (let i = 0; i < this.tags.length; i++){
+    //   const pulledTag = await this.tagService.getTagByName(this.tags[i].tagName);
+    //   if (pulledTag == null){
+    //     this.tags[i] = await this.tagService.createTag(this.tags[i]);
+    //   } else {
+    //     this.tags[i] = pulledTag;
+    //   }
+    // }
+
+    // add the tags to the cards
+
   }
 }
