@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Card } from '../../models/card';
@@ -16,30 +17,34 @@ export class StackService {
     private jwtService:JwtService
     ) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': this.jwt })
+  };
     
   // CRUD Operations
   async createStack(stack:Stack):Promise<Stack>{
-    stack = await this.http.post<Stack>("http://34.122.220.146:8080/stacks",stack).toPromise()
+    stack = await this.http.post<Stack>("http://34.122.220.146:8080/stacks",stack,this.httpOptions).toPromise()
     return stack;
   }
 
   async getAllStacks():Promise<Stack[]>{
-    const stacks:Stack[] = await this.http.get<Stack[]>(`http://34.122.220.146:8080/stacks`).toPromise();
+    const stacks:Stack[] = await this.http.get<Stack[]>(`http://34.122.220.146:8080/stacks`,this.httpOptions).toPromise();
     return stacks;
   }
 
   async getStackById(stackId:number):Promise<Stack>{
-    const stack:Stack = await this.http.get<Stack>(`http://34.122.220.146:8080/stacks/${stackId}`).toPromise();
+    const stack:Stack = await this.http.get<Stack>(`http://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
     return stack;
   }
 
   async updateStack(stack:Stack):Promise<Stack>{
-    const updatedStack:Stack = await this.http.put<Stack>(`http://34.122.220.146:8080/stacks/${stack.stackId}`,stack).toPromise();
+    const updatedStack:Stack = await this.http.put<Stack>(`http://34.122.220.146:8080/stacks/${stack.stackId}`,stack,this.httpOptions).toPromise();
     return stack;
   }
 
   async deleteStack(stackId:number):Promise<Object>{
-    const result = await this.http.delete(`http://34.122.220.146:8080/stacks/${stackId}`).toPromise();
+    const result = await this.http.delete(`http://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
     return result;
   }
 
