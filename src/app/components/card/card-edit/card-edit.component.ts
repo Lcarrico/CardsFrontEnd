@@ -97,12 +97,13 @@ export class CardEditComponent implements OnInit {
       this.card = await this.cardService.createCard(this.card);
     } else {
       // update the card info
+      console.log(this.card);
       this.card = await this.cardService.updateCard(this.card);
     }
 
     this.cardLinkService.createCardLink(new CardLink(0, Number(this.card.cardId), 
       Number(this.stackId)));
-      
+
     console.log(this.card);
 
     // // create the non-existing tags
