@@ -1,13 +1,14 @@
-<app-navbar></app-navbar>
 
-<label for="stackNameInput">Stack Name: </label>
-<input id="stackNameInput" type="text" placeholder="e.g. Java" [(ngModel)]="stackName">
-
-<label for="descriptionInput">Description: </label>
-<input id="descriptionInput" type="text" placeholder="e.g. Revature notes from 2102GCP batch" [(ngModel)]="description">
-
-<button (click)="createStack">Create!</button>
-
-<app-stack-table></app-stack-table>
+<div class="stackForm">
+        <mat-form-field>
+            <mat-label>Stack Name</mat-label>
+            <input matInput [(ngModel)]="stackName">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="description"></textarea>
+        </mat-form-field>
+        <button mat-raised-button (click)="createStack()" color="primary">CREATE STACK</button>
+</div>
 
 

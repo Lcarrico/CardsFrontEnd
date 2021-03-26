@@ -12,8 +12,10 @@ import { StackDetailsComponent } from './components/stack-details/stack-details.
 import { StackDetailsCardComponent } from './components/stack-details-card/stack-details-card.component';
 import { CardGridComponent } from './components/card/card-grid/card-grid.component';
 import { StackViewPageComponent } from './components/pages/stack-view-page/stack-view-page.component';
+import { StudyPageComponent } from './components/pages/study-page/study-page.component';
 
 const routes: Routes = [
+  {path:"study/:stackId",component:StudyPageComponent},
   {path:"stack-view-page", component:StackViewPageComponent},
   {path:"card-grid", component:CardGridComponent},
   {path:"stack-details-card", component:StackDetailsCardComponent},

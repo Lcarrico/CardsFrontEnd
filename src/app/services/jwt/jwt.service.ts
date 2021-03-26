@@ -12,6 +12,7 @@ export class JwtService {
 
   jwtToken:string=""
   decodedToken:{[key:string]:string}={}
+  
   // private jwtCookie = {}
 
   constructor(private http:HttpClient) { }
@@ -70,7 +71,7 @@ export class JwtService {
   getJwtFromCookie():string{
     const cookies=document.cookie
     // this.jwtCookie = {};
-    if(!!cookies === false){return "NO COOKIE FOR YOU!"}
+    if(!!cookies === false){return ""}
     const cookiesArr = cookies.split(';');
     for(const cookie of cookiesArr){
       const cookieArr = cookie.split('=');
@@ -78,7 +79,7 @@ export class JwtService {
       const jwt = cookieArr[1].trim()
       if(key=="Authorization"){return jwt}
     }
-    return "There is no JWT cookie"
+    return ""
   }
   
   logOut() {
