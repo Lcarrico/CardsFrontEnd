@@ -10,9 +10,9 @@ import { StackLinkService } from 'src/app/services/stackLink/stack-link.service'
 })
 export class CardGridComponent implements OnInit {
 
-  cardIds:Number[] = [1,2,5,6,7,8,9]
+  cardIds:Number[] = []
   
-  @Input() stackId:string = "1";
+  @Input() stackId:string = "";
 
   @Input() mode:string = "view";
   constructor(private cardLinkService:CardLinkService) {
@@ -24,12 +24,13 @@ export class CardGridComponent implements OnInit {
 
   async initCardIds(){
     const stackIdNum:number = Number(this.stackId);
+    console.log(stackIdNum);
     const cardLinks:CardLink[] = await this.cardLinkService.getCardLinksByStackId(stackIdNum);
-    let cardIdsTemp:number[] = [];
-    for (const cardLinkTemp of cardLinks){
-      cardIdsTemp.push(cardLinkTemp.cardId);
+    for (const link of cardLinks){
+      this.cardIds.push(link.cardId);
     }
-    this.cardIds = cardIdsTemp;
+    console.log(this.cardIds);
   }
+
 
 }

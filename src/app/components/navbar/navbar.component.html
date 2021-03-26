@@ -3,21 +3,26 @@
     <!-- <button mat-icon-button >
       <mat-icon>menu</mat-icon>
     </button> -->
+    
+
     <span>RevaFlash Study Cards</span>
-    <span><button mat-raised-button color="primary" *ngIf="loggedIn" (click)="goToDashboard()">DASHBOARD</button></span>
-    <span><button mat-raised-button color="primary" *ngIf="loggedIn" (click)="goToStudy()">STUDY</button></span>
-    
-    
     <span class="spacer"></span>
+    
+    <span><button mat-raised-button color="primary" *ngIf="loggedIn" (click)="goToDashboard()">DASHBOARD</button></span>
+    
     
     <!-- <mat-form-field appearance="legacy" floatLabel="never">
       <input matInput placeholder="Search for Subjects" [(ngModel)]="searchString">
     </mat-form-field> -->
     <!-- <button mat-raised-button color="basic" >GO</button> -->
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+    <button mat-icon-button *ngIf="loggedIn" [matMenuTriggerFor]="menu">
       <mat-icon>person</mat-icon>
     </button>
-    <mat-menu #menu="matMenu">
+    <mat-menu  #menu="matMenu">
+      <mat-card>
+        <mat-card-header><mat-card-title>{{username}} Profile</mat-card-title></mat-card-header>
+        <mat-card-content>Learner ID: {{userId}}</mat-card-content>
+      </mat-card>
       <button (click)="logOut()" mat-menu-item>Log Out</button>
     </mat-menu>
     

@@ -11,6 +11,8 @@ export class NavbarComponent implements OnInit {
 
   loggedIn:boolean=false;
   searchString:string = ""
+  userId:number = 0;
+  username:string = "";
 
   constructor(
     private jwtService:JwtService,
@@ -22,12 +24,15 @@ export class NavbarComponent implements OnInit {
       this.loggedIn = false;
     }else{
       this.loggedIn = true;
+      this.userId = this.jwtService.getUserId();
+      this.username = this.jwtService.getUsername();
     }
+    
   }
 
   logOut(){
     this.jwtService.logOut();
-    this.router.navigate(['/launcher'])
+    // this.router.navigate(['/launcher'])
   }
 
   goToDashboard(){
