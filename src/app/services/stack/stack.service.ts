@@ -1,8 +1,11 @@
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CardLink } from 'src/app/models/cardLink';
 import { Card } from '../../models/card';
 import { Stack } from '../../models/stack';
+import { CardService } from '../card/card.service';
+import { CardLinkService } from '../cardLink/card-link.service';
 import { JwtService } from '../jwt/jwt.service';
 
 @Injectable({
@@ -14,7 +17,9 @@ export class StackService {
 
   constructor(
     private http:HttpClient,
-    private jwtService:JwtService
+    private jwtService:JwtService,
+    private cardLinkService:CardLinkService,
+    private cardService:CardService
     ) { }
 
   httpOptions = {
@@ -51,7 +56,10 @@ export class StackService {
   // // Services for Cards in Stacks
   // async getAllCardsFromStack(stackId:number){
   //   const stack:Stack = await this.getStackById(stackId);
-  //   return stack.cards;
+  //   const cardLinks:CardLink[] = await this.cardLinkService.getCardLinksByStackId(stackId);
+  //   const cards:Card[]=[];
+  //   cardLinks.forEach(async (link)=>{cards.push(await this.cardService.getCardById(link.cardId))})
+  //   return cards;
   // }
 
   // async getCardByIdFromStack(stackId:number,cardId:number){

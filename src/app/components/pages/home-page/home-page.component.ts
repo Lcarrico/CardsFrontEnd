@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit {
     this.userId = this.jwtService.getUserId();
     this.username = this.jwtService.getUsername();
     this.getStacks();
-    this.getCards();
+    // this.getCards();
   }
 
   async getStacks(){
@@ -53,14 +53,16 @@ export class HomePageComponent implements OnInit {
     console.log(this.myStacks)
   }
 
-  getCards(){
-    this.stackLinks.forEach(async (stackLink:StackLink)=>{
-      console.log(stackLink)
-      this.cardLinks = await this.cardLinkService.getCardLinksByStackId(stackLink.stackId);
-      this.cardLinks.forEach(async (cardLink:CardLink)=>{
-        console.log(cardLink)
-        this.myCards.push(await this.cardService.getCardById(cardLink.cardId));
-      })
-    })  
-  }
+  // getCards(){
+  //   this.stackLinks.forEach(async (stackLink:StackLink)=>{
+  //     console.log(stackLink)
+  //     this.cardLinks = await this.cardLinkService.getCardLinksByStackId(stackLink.stackId);
+  //     this.cardLinks.forEach(async (cardLink:CardLink)=>{
+  //       console.log(cardLink)
+  //       this.myCards.push(await this.cardService.getCardById(cardLink.cardId));
+  //     })
+  //   })  
+  // }
+
+
 }

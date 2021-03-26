@@ -10,19 +10,24 @@ import { CardService } from 'src/app/services/card/card.service';
 export class CardViewComponent implements OnInit {
   showingTitle = "Question";
   showingContent = "What is 1+1?";
-  card:Card = new Card(0, "What is 1+1", "2");
-
-  @Input() cardId: string = "0";
-
   flipped = false;
   flipping = false;
+
+  card:Card = new Card(0, "What is 1+1", "2");
+
+  @Input() cardId: string = "";
   
-  constructor(private cardService:CardService) { 
-    
+  constructor(private cardService:CardService) { }
+
+  ngOnInit(): void {
+    console.log(this.cardId)
+    this.setCard();
+    this.showingContent = this.card.question;
   }
 
   async setCard(){
     const cardIdNum:number = Number(this.cardId)
+    console.log(cardIdNum);
     if (cardIdNum != 0)
       this.card = await this.cardService.getCardById(cardIdNum);
     this.refresh();
@@ -34,11 +39,6 @@ export class CardViewComponent implements OnInit {
     } else if (this.showingTitle == "Answer") {
       this.showingContent = this.card.answer;
     }
-  }
-
-  ngOnInit(): void {
-    this.setCard();
-    this.showingContent = this.card.question;
   }
 
   toggleDisplay(){

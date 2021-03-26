@@ -1,8 +1,9 @@
-<div fxLayout="row wrap" fxLayoutGap="50px grid" fxLayoutAlign="flex-start">
-    <ng-container *ngFor="let id of cardIds; let i = index">
+<div class="cardGrid">
+<div fxLayout="row wrap" fxLayoutGap="20px grid" fxLayoutAlign="flex-start">
+    <ng-container *ngFor="let id of cardIds">
         <app-card-view cardId={{id}} *ngIf="mode == 'view'; else elseBlock"></app-card-view>
         <ng-template #elseBlock>
             <app-card-edit cardId={{id}}> </app-card-edit>
         </ng-template>
     </ng-container>
-</div>
+</div></div>

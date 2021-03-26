@@ -49,7 +49,7 @@ export class StackDetailsCardComponent implements OnInit {
     this.router.navigate(['/study',this.stack.stackId])
   }
 
-  goToStackEditPage(stackId:number){
+  goToStackEditPage(){
     this.router.navigate(['/stack-view-page',this.stack.stackId])
   }
 

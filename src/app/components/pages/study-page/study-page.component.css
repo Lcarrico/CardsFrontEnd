@@ -9,3 +9,12 @@ mat-card {
     width: 500px;
   margin: auto;
 }
+
+.cardDisplay{
+  padding-top: 20px;
+  margin: auto;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

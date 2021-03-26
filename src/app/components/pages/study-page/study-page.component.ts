@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { ComponentFactoryResolver, Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VirtualTimeScheduler } from 'rxjs';
@@ -15,11 +15,10 @@ import { StackService } from 'src/app/services/stack/stack.service';
 })
 export class StudyPageComponent implements OnInit {
 
-  stack:Stack = new Stack(0,"","")
+  stack:Stack = new Stack(0,"","");
   cards:Card[] = [];
   cardLinks:CardLink[]=[];
   studying:boolean=false;
-  stackId:number = 0
 
   constructor(
     private cardLinkService:CardLinkService,
@@ -28,11 +27,9 @@ export class StudyPageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.stackId = Number(this.route.snapshot.paramMap.get("stackId"));
-    // console.log(id);
-    // this.getStack(id);
-    // console.log(this.stack);
-
+    this.stack.stackId = Number(this.route.snapshot.paramMap.get("stackId"));
+    console.log(this.stack.stackId);
+    this.getStack(this.stack.stackId);
   }
 
   async startStudying(){
@@ -43,5 +40,4 @@ export class StudyPageComponent implements OnInit {
   async getStack(stackId:number){
     this.stack = await this.stackService.getStackById(stackId);
   }
-
 }
