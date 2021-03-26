@@ -38,6 +38,7 @@ import { StackDetailsComponent } from './components/stack-details/stack-details.
 import { StackDetailsCardComponent } from './components/stack-details-card/stack-details-card.component';
 import { CardGridComponent } from './components/card/card-grid/card-grid.component';
 import { StackViewPageComponent } from './components/pages/stack-view-page/stack-view-page.component';
+import { CardAddComponent } from './components/card/card-add/card-add.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { StackViewPageComponent } from './components/pages/stack-view-page/stack
     StackDetailsComponent,
     StackDetailsCardComponent,
     CardGridComponent,
-    StackViewPageComponent
+    StackViewPageComponent,
+    CardAddComponent
   ],
   imports: [
     BrowserModule,

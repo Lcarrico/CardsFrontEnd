@@ -1,0 +1,18 @@
+mat-card.addCard {
+    height: 345px;
+    width: 335px;
+    margin-right: 45px;
+}
+
+button{
+    height: 200px !important;
+    width: 200px !important;
+    margin-left: 90px !important;
+    margin-top: 65px !important;
+}
+
+.mat-icon{
+    height:200px !important;
+    width:200px !important;
+    font-size:160px !important;
+}

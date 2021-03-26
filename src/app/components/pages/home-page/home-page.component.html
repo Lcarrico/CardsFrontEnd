@@ -14,7 +14,7 @@
     <div class="content">
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let stack of myStacks">
-                <mat-card class="mat-elevation-z4">
+                <!-- <mat-card class="mat-elevation-z4">
                     <mat-card-header>
                         <mat-card-title>{{stack.stackName}}</mat-card-title>
                     </mat-card-header>
@@ -27,14 +27,26 @@
                         <button mat-button>LIKE</button>
                         <button mat-button>SHARE</button>
                     </mat-card-actions>
-                </mat-card>
+                </mat-card> -->
+                <app-stack-details-card stackId={{stack.stackId}}> </app-stack-details-card>
             </div>
         </div>
     </div>
 </div>
 
+
+
 <div class="cardsDisplay">
+    
     <h1>Cards</h1>
+    <ng-container *ngFor="let stack of myStacks">
+        <div class="cardRow" >  
+        <app-card-grid mode=view stackId={{stack.stackId}}></app-card-grid>
+        </div>
+    </ng-container>
+    
+
+    <!--
     <div class="content">
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let card of myCards">
@@ -54,6 +66,6 @@
                 </mat-card>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 

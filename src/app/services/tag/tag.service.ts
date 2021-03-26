@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Card } from 'src/app/models/card';
 import { Stack } from 'src/app/models/stack';
@@ -18,7 +18,13 @@ export class TagService {
     ) { }
     
   async createTag(tag:Tag){
-    tag = await this.http.post<Tag>(`http://34.122.220.146:8080/tags`,tag).toPromise();
+
+    const details = {
+      headers: new HttpHeaders({
+        "Authorization": this.jwt,
+    })};
+    console.log(details);
+    tag = await this.http.post<Tag>(`http://34.122.220.146:8080/tags`,tag, details).toPromise();
     return tag;
   }
 
@@ -28,8 +34,8 @@ export class TagService {
   }
 
   async getTagByName(tagName:string){
-    const tag:Tag = await this.http.get<Tag>(`http://34.122.220.146:8080/tags?tagName=${tagName}`).toPromise();
-    return tag;
+    const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags?tagName=${tagName}`).toPromise();
+    return tags[0];
   }
 
   async updateTag(tag:Tag){

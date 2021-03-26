@@ -1,3 +1,7 @@
 .stacksDisplay, .cardsDisplay{
     padding: 20px;
 }
+
+.cardRow {
+    margin-bottom: 50px;
+}
