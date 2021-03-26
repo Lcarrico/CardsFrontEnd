@@ -72,6 +72,7 @@ export class StackDetailsCardComponent implements OnInit {
   }
 
   async createStackLink(){
+    this.learnerService.getLearnerByUsername(this.username)
     let link:StackLink = new StackLink(0,this.friendId,this.stack.stackId,"Forker")
     link = await this.stackLinkService.createStackLink(link);
     console.log(link);
