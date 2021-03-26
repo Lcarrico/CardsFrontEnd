@@ -24,6 +24,7 @@ export class TagService {
     private jwtService:JwtService
     ) { }
     
+
   async createTag(tag:Tag):Promise<Tag>{
     tag = await this.http.post<Tag>(`http://34.122.220.146:8080/tags`,tag,this.httpOptions).toPromise();
     return tag;
@@ -35,8 +36,8 @@ export class TagService {
   }
 
   async getTagByName(tagName:string){
-    const tag:Tag = await this.http.get<Tag>(`http://34.122.220.146:8080/tags?tagName=${tagName}`,this.httpOptions).toPromise();
-    return tag;
+    const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags?tagName=${tagName}`,this.httpOptions).toPromise();
+    return tags[0];
   }
 
   async updateTag(tag:Tag){

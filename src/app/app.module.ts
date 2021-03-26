@@ -37,11 +37,12 @@ import { StackDetailsComponent } from './components/stack-details/stack-details.
 import { StackDetailsCardComponent } from './components/stack-details-card/stack-details-card.component';
 import { CardGridComponent } from './components/card/card-grid/card-grid.component';
 import { StackViewPageComponent } from './components/pages/stack-view-page/stack-view-page.component';
+import { CardAddComponent } from './components/card/card-add/card-add.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { StudyPageComponent } from './components/pages/study-page/study-page.component';
 import { ShareStackDialogComponent } from './components/share-stack-dialog/share-stack-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import {MatStepperModule} from '@angular/material/stepper';
     StackDetailsCardComponent,
     CardGridComponent,
     StackViewPageComponent,
+    CardAddComponent,
     StudyPageComponent,
     ShareStackDialogComponent
   ],

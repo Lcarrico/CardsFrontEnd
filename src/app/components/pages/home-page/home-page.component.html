@@ -24,6 +24,14 @@
 </div>
 <!-- <div class="cardsDisplay">
     <h1>Cards</h1>
+    <ng-container *ngFor="let stack of myStacks">
+        <div class="cardRow" >  
+        <app-card-grid mode=view stackId={{stack.stackId}}></app-card-grid>
+        </div>
+    </ng-container>
+    
+
+    <!--
     <div class="content">
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let card of myCards">

@@ -1,5 +1,4 @@
 <mat-card class="card">
-
 <mat-card-content>
     <mat-tab-group mat-align-tabs="center">
       <mat-tab label="Question">
@@ -24,7 +23,7 @@
     
   </mat-card-content>
 
-    <mat-form-field class="chip-list">
+    <!-- <mat-form-field class="chip-list">
       <mat-label>Tags</mat-label>
       <mat-chip-list #chipList aria-label="Tag selection">
           <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
@@ -38,9 +37,12 @@
               [matChipInputAddOnBlur]="addOnBlur"
               (matChipInputTokenEnd)="add($event)">
       </mat-chip-list>
-    </mat-form-field>
+    </mat-form-field> -->
+    <button (click)="submit()" mat-button class="btn btn-primary">Submit</button>
+    <!-- <button (click)="delete()" mat-button class="btn btn-warning" color="warn">Delete</button> -->
 
   <mat-card-actions>
-    <button mat-button class="btn btn-primary">Submit</button>
+    
+    
   </mat-card-actions>
 </mat-card>

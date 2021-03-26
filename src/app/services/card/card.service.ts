@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Card } from '../../models/card';
 import { Tag } from '../../models/tag';
 import { JwtService } from '../jwt/jwt.service';
@@ -18,10 +18,10 @@ export class CardService {
     private jwtService:JwtService
     ) { }
 
-    httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': this.jwt })
-    };
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': this.jwt })
+  };
 
   async createCard(card:Card){
     card = await this.http.post<Card>(`http://34.122.220.146:8080/cards`,card,this.httpOptions).toPromise();
