@@ -23,26 +23,26 @@ export class CardService {
   };
 
   async createCard(card:Card){
-    card = await this.http.post<Card>(`http://34.122.220.146:8080/cards`,card,this.httpOptions).toPromise();
+    card = await this.http.post<Card>(`https://34.122.220.146:8080/cards`,card,this.httpOptions).toPromise();
     return card;
   }
 
   async getCardById(id:number){
-    const card:Card = await this.http.get<Card>(`http://34.122.220.146:8080/cards/${id}`,this.httpOptions).toPromise();
+    const card:Card = await this.http.get<Card>(`https://34.122.220.146:8080/cards/${id}`,this.httpOptions).toPromise();
     return card;
   }
 
   async getAllCards(){
-    const cards:Card[] = await this.http.get<Card[]>(`http://34.122.220.146:8080/cards`,this.httpOptions).toPromise();
+    const cards:Card[] = await this.http.get<Card[]>(`https://34.122.220.146:8080/cards`,this.httpOptions).toPromise();
     return cards;
   }
 
   async updateCard(card:Card){
-    card = await this.http.put<Card>(`http://34.122.220.146:8080/cards/${card.cardId}`,card,this.httpOptions).toPromise();
+    card = await this.http.put<Card>(`https://34.122.220.146:8080/cards/${card.cardId}`,card,this.httpOptions).toPromise();
     return card;
   }
 
   async removeCard(card:Card){
-    return await this.http.delete(`http://34.122.220.146:8080/cards/${card.cardId}`,this.httpOptions).toPromise();
+    return await this.http.delete(`https://34.122.220.146:8080/cards/${card.cardId}`,this.httpOptions).toPromise();
   }
 }

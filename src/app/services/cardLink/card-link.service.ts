@@ -22,37 +22,37 @@ export class CardLinkService {
     ) { }
 
   async getAllCardLinks(){
-    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`http://34.122.220.146:8080/cardLinks`,this.httpOptions).toPromise();
+    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`https://34.122.220.146:8080/cardLinks`,this.httpOptions).toPromise();
     return cardLinks;
   }
 
   async getCardLinkById(cardLinkId:number){
-    const cardLink:CardLink = await this.http.get<CardLink>(`http://34.122.220.146:8080/cardLinks/${cardLinkId}`,this.httpOptions).toPromise();
+    const cardLink:CardLink = await this.http.get<CardLink>(`https://34.122.220.146:8080/cardLinks/${cardLinkId}`,this.httpOptions).toPromise();
     return cardLink;
   }
 
   async getCardLinksByCardId(cardId:number){
-    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`http://34.122.220.146:8080/cardLinks?cardId=${cardId}`,this.httpOptions).toPromise();
+    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`https://34.122.220.146:8080/cardLinks?cardId=${cardId}`,this.httpOptions).toPromise();
     return cardLinks;
   }
 
   async getCardLinksByStackId(stackId:number):Promise<CardLink[]>{
-    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`http://34.122.220.146:8080/cardLinks?stackId=${stackId}`,this.httpOptions).toPromise();
+    const cardLinks:CardLink[] = await this.http.get<CardLink[]>(`https://34.122.220.146:8080/cardLinks?stackId=${stackId}`,this.httpOptions).toPromise();
     return cardLinks;
   }
 
   async createCardLink(cardLink:CardLink){
-    cardLink = await this.http.post<CardLink>(`http://34.122.220.146:8080/cardLinks`, cardLink,this.httpOptions).toPromise();
+    cardLink = await this.http.post<CardLink>(`https://34.122.220.146:8080/cardLinks`, cardLink,this.httpOptions).toPromise();
     return cardLink;
   }
 
   async updateCardLink(cardLink:CardLink){
-    cardLink = await this.http.put<CardLink>(`http://34.122.220.146:8080/cardLinks`, cardLink,this.httpOptions).toPromise();
+    cardLink = await this.http.put<CardLink>(`https://34.122.220.146:8080/cardLinks`, cardLink,this.httpOptions).toPromise();
     return cardLink;
   }
 
   async removeCardLink(cardLinkId:number){
-    const result = await this.http.delete(`http:///34.122.220.146:8080/cardLinks/${cardLinkId}`,this.httpOptions).toPromise();
+    const result = await this.http.delete(`https:///34.122.220.146:8080/cardLinks/${cardLinkId}`,this.httpOptions).toPromise();
     return result;
   }
 }

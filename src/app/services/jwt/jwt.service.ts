@@ -23,7 +23,7 @@ export class JwtService {
 
   async login(learner:Learner):Promise<string>{
     try{
-      this.jwtToken = await this.http.post<string>('http://34.122.220.146:8080/login', learner, {responseType: "text" as "json"}).toPromise();
+      this.jwtToken = await this.http.post<string>('https://34.122.220.146:8080/login', learner, {responseType: "text" as "json"}).toPromise();
       this.setJwtCookie("Authorization",this.jwtToken)
       console.log(jwt_decode(this.jwtToken))
       return jwt_decode(this.jwtToken);
@@ -36,7 +36,7 @@ export class JwtService {
 
   async register(learner:Learner):Promise<string> {
     try{
-      learner = await this.http.post<Learner>('http://34.122.220.146:8080/learners',learner).toPromise();
+      learner = await this.http.post<Learner>('https://34.122.220.146:8080/learners',learner).toPromise();
       return this.login(learner)
     }catch(Error){
       return "Error"

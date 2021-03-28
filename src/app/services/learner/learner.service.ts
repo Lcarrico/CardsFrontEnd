@@ -22,31 +22,31 @@ export class LearnerService {
     ) { }
     
   async createLearner(learner:Learner):Promise<Learner> {
-    learner = await this.http.post<Learner>(`http://34.122.220.146:8080/learners`,learner,this.httpOptions).toPromise();
+    learner = await this.http.post<Learner>(`https://34.122.220.146:8080/learners`,learner,this.httpOptions).toPromise();
     return learner;
   }
 
   async getLearnerById(id:number){
-    const learners:Learner[] = await this.http.get<Learner[]>(`http://34.122.220.146:8080/learners/${id}`,this.httpOptions).toPromise();
+    const learners:Learner[] = await this.http.get<Learner[]>(`https://34.122.220.146:8080/learners/${id}`,this.httpOptions).toPromise();
     return learners;
   }
 
   async getLearnerByUsername(username:string){
-    const learners:Learner[] = await this.http.get<Learner[]>(`http://34.122.220.146:8080/learners/${username}`,this.httpOptions).toPromise();
+    const learners:Learner[] = await this.http.get<Learner[]>(`https://34.122.220.146:8080/learners/${username}`,this.httpOptions).toPromise();
     return learners;
   }
 
   async getAllLearners(){
-    const learners:Learner[] = await this.http.get<Learner[]>(`http://34.122.220.146:8080/learners`,this.httpOptions).toPromise();
+    const learners:Learner[] = await this.http.get<Learner[]>(`https://34.122.220.146:8080/learners`,this.httpOptions).toPromise();
     return learners;
   }
 
   async updateLearner(learner:Learner){
-    learner = await this.http.put<Learner>(`http://34.122.220.146:8080/learners`,learner,this.httpOptions).toPromise();
+    learner = await this.http.put<Learner>(`https://34.122.220.146:8080/learners`,learner,this.httpOptions).toPromise();
     return learner;
   }
 
   async removeLearner(learner:Learner){
-    return await this.http.delete(`http://34.122.220.146:8080/learners/${learner.learnerId}`,this.httpOptions).toPromise();
+    return await this.http.delete(`https://34.122.220.146:8080/learners/${learner.learnerId}`,this.httpOptions).toPromise();
   }
 }
