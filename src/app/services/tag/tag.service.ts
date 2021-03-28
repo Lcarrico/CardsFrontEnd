@@ -25,32 +25,63 @@ export class TagService {
     ) { }
     
 
+  // async createTag(tag:Tag):Promise<Tag>{
+  //   tag = await this.http.post<Tag>(`http://34.122.220.146:8080/tags`,tag,this.httpOptions).toPromise();
+  //   return tag;
+  // }
+
+  // async getTagById(id:number){
+  //   const tags:Tag = await this.http.get<Tag>(`http://34.122.220.146:8080/tags/${id}`,this.httpOptions).toPromise();
+  //   return tags;
+  // }
+
+  // async getTagByName(tagName:string){
+  //   const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags?tagName=${tagName}`,this.httpOptions).toPromise();
+  //   return tags[0];
+  // }
+
+  // async updateTag(tag:Tag){
+  //   tag = await this.http.put<Tag>(`http://34.122.220.146:8080/tags`,tag,this.httpOptions).toPromise();
+  //   return tag;
+  // }
+
+  // async removeTag(tag:Tag){
+  //   return await this.http.delete(`http://34.122.220.146:8080/tags/${tag.tagId}`,this.httpOptions).toPromise();
+  // }
+
+  // async getAllTags(){
+  //   const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags`,this.httpOptions).toPromise();
+  //   return tags;
+  // }
+
   async createTag(tag:Tag):Promise<Tag>{
-    tag = await this.http.post<Tag>(`http://34.122.220.146:8080/tags`,tag,this.httpOptions).toPromise();
+    tag = await this.http.post<Tag>(`https://34.122.220.146:8080/tags`,tag,this.httpOptions).toPromise();
     return tag;
   }
 
   async getTagById(id:number){
-    const tags:Tag = await this.http.get<Tag>(`http://34.122.220.146:8080/tags/${id}`,this.httpOptions).toPromise();
+    const tags:Tag = await this.http.get<Tag>(`https://34.122.220.146:8080/tags/${id}`,this.httpOptions).toPromise();
     return tags;
   }
 
   async getTagByName(tagName:string){
-    const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags?tagName=${tagName}`,this.httpOptions).toPromise();
+    const tags:Tag[] = await this.http.get<Tag[]>(`https://34.122.220.146:8080/tags?tagName=${tagName}`,this.httpOptions).toPromise();
     return tags[0];
   }
 
   async updateTag(tag:Tag){
-    tag = await this.http.put<Tag>(`http://34.122.220.146:8080/tags`,tag,this.httpOptions).toPromise();
+    tag = await this.http.put<Tag>(`https://34.122.220.146:8080/tags`,tag,this.httpOptions).toPromise();
     return tag;
   }
 
   async removeTag(tag:Tag){
-    return await this.http.delete(`http://34.122.220.146:8080/tags/${tag.tagId}`,this.httpOptions).toPromise();
+    return await this.http.delete(`https://34.122.220.146:8080/tags/${tag.tagId}`,this.httpOptions).toPromise();
   }
 
   async getAllTags(){
-    const tags:Tag[] = await this.http.get<Tag[]>(`http://34.122.220.146:8080/tags`,this.httpOptions).toPromise();
+    const tags:Tag[] = await this.http.get<Tag[]>(`https://34.122.220.146:8080/tags`,this.httpOptions).toPromise();
     return tags;
   }
+
+
 }

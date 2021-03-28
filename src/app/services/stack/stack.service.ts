@@ -26,32 +26,61 @@ export class StackService {
     headers: new HttpHeaders({
       'Authorization': this.jwt })
   };
+
+
+// CRUD Operations
+async createStack(stack:Stack):Promise<Stack>{
+  stack = await this.http.post<Stack>("https://34.122.220.146:8080/stacks",stack,this.httpOptions).toPromise()
+  return stack;
+}
+
+async getAllStacks():Promise<Stack[]>{
+  const stacks:Stack[] = await this.http.get<Stack[]>(`https://34.122.220.146:8080/stacks`,this.httpOptions).toPromise();
+  return stacks;
+}
+
+async getStackById(stackId:number):Promise<Stack>{
+  const stack:Stack = await this.http.get<Stack>(`https://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
+  return stack;
+}
+
+async updateStack(stack:Stack):Promise<Stack>{
+  const updatedStack:Stack = await this.http.put<Stack>(`https://34.122.220.146:8080/stacks/${stack.stackId}`,stack,this.httpOptions).toPromise();
+  return stack;
+}
+
+async deleteStack(stackId:number):Promise<Object>{
+  const result = await this.http.delete(`https://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
+  return result;
+}
+
+
     
-  // CRUD Operations
-  async createStack(stack:Stack):Promise<Stack>{
-    stack = await this.http.post<Stack>("http://34.122.220.146:8080/stacks",stack,this.httpOptions).toPromise()
-    return stack;
-  }
+  // // CRUD Operations
+  // async createStack(stack:Stack):Promise<Stack>{
+  //   stack = await this.http.post<Stack>("http://34.122.220.146:8080/stacks",stack,this.httpOptions).toPromise()
+  //   return stack;
+  // }
 
-  async getAllStacks():Promise<Stack[]>{
-    const stacks:Stack[] = await this.http.get<Stack[]>(`http://34.122.220.146:8080/stacks`,this.httpOptions).toPromise();
-    return stacks;
-  }
+  // async getAllStacks():Promise<Stack[]>{
+  //   const stacks:Stack[] = await this.http.get<Stack[]>(`http://34.122.220.146:8080/stacks`,this.httpOptions).toPromise();
+  //   return stacks;
+  // }
 
-  async getStackById(stackId:number):Promise<Stack>{
-    const stack:Stack = await this.http.get<Stack>(`http://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
-    return stack;
-  }
+  // async getStackById(stackId:number):Promise<Stack>{
+  //   const stack:Stack = await this.http.get<Stack>(`http://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
+  //   return stack;
+  // }
 
-  async updateStack(stack:Stack):Promise<Stack>{
-    const updatedStack:Stack = await this.http.put<Stack>(`http://34.122.220.146:8080/stacks/${stack.stackId}`,stack,this.httpOptions).toPromise();
-    return stack;
-  }
+  // async updateStack(stack:Stack):Promise<Stack>{
+  //   const updatedStack:Stack = await this.http.put<Stack>(`http://34.122.220.146:8080/stacks/${stack.stackId}`,stack,this.httpOptions).toPromise();
+  //   return stack;
+  // }
 
-  async deleteStack(stackId:number):Promise<Object>{
-    const result = await this.http.delete(`http://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
-    return result;
-  }
+  // async deleteStack(stackId:number):Promise<Object>{
+  //   const result = await this.http.delete(`http://34.122.220.146:8080/stacks/${stackId}`,this.httpOptions).toPromise();
+  //   return result;
+  // }
 
   // // Services for Cards in Stacks
   // async getAllCardsFromStack(stackId:number){

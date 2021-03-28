@@ -21,38 +21,75 @@ export class TopicLinkService {
       'Authorization': this.jwt })
   };
 
+  // async getAllTopicLinks(){
+  //   const topicLinks:TopicLink[] = await this.http.get<TopicLink[]>(`http://34.122.220.146:8080/topicLinks`,this.httpOptions).toPromise();
+  //   return topicLinks;
+  // }
+
+  // async getTopicLinkById(topicId:number){
+  //   const topicLink:TopicLink = await this.http.get<TopicLink>(`http://34.122.220.146:8080/topicLinks/${topicId}`,this.httpOptions).toPromise();
+  //   return topicLink;
+  // }
+
+  // async getTopicLinkByStackId(stackId:number){
+  //   const topicLink:TopicLink = await this.http.get<TopicLink>(`http://34.122.220.146:8080/topicLinks?stackId=${stackId}`,this.httpOptions).toPromise();
+  //   return topicLink;
+  // }
+
+  // async getTopicLinkByTopicId(topicId:number){
+  //   const topicLink:TopicLink = await this.http.get<TopicLink>(`http://34.122.220.146:8080/topicLinks?topicId=${topicId}`,this.httpOptions).toPromise();
+  //   return topicLink;
+  // }
+
+  // async createTopicLink(topicLink:TopicLink){
+  //   topicLink = await this.http.post<TopicLink>(`http://34.122.220.146:8080/topicLinks`, topicLink, this.httpOptions).toPromise();
+  //   return topicLink;
+  // }
+
+  // async updateTopicLink(topicLink:TopicLink){
+  //   topicLink = await this.http.put<TopicLink>(`http://34.122.220.146:8080/topicLinks`, topicLink, this.httpOptions).toPromise();
+  //   return topicLink;
+  // }
+
+  // async removeTopicLink(topicLinkId:number){
+  //   const result = await this.http.delete(`http:///34.122.220.146:8080/topicLinks/${topicLinkId}`, this.httpOptions).toPromise();
+  //   return result;
+  // }
+
   async getAllTopicLinks(){
-    const topicLinks:TopicLink[] = await this.http.get<TopicLink[]>(`http://34.122.220.146:8080/topicLinks`,this.httpOptions).toPromise();
+    const topicLinks:TopicLink[] = await this.http.get<TopicLink[]>(`https://34.122.220.146:8080/topicLinks`,this.httpOptions).toPromise();
     return topicLinks;
   }
 
   async getTopicLinkById(topicId:number){
-    const topicLink:TopicLink = await this.http.get<TopicLink>(`http://34.122.220.146:8080/topicLinks/${topicId}`,this.httpOptions).toPromise();
+    const topicLink:TopicLink = await this.http.get<TopicLink>(`https://34.122.220.146:8080/topicLinks/${topicId}`,this.httpOptions).toPromise();
     return topicLink;
   }
 
   async getTopicLinkByStackId(stackId:number){
-    const topicLink:TopicLink = await this.http.get<TopicLink>(`http://34.122.220.146:8080/topicLinks?stackId=${stackId}`,this.httpOptions).toPromise();
+    const topicLink:TopicLink = await this.http.get<TopicLink>(`https://34.122.220.146:8080/topicLinks?stackId=${stackId}`,this.httpOptions).toPromise();
     return topicLink;
   }
 
   async getTopicLinkByTopicId(topicId:number){
-    const topicLink:TopicLink = await this.http.get<TopicLink>(`http://34.122.220.146:8080/topicLinks?topicId=${topicId}`,this.httpOptions).toPromise();
+    const topicLink:TopicLink = await this.http.get<TopicLink>(`https://34.122.220.146:8080/topicLinks?topicId=${topicId}`,this.httpOptions).toPromise();
     return topicLink;
   }
 
   async createTopicLink(topicLink:TopicLink){
-    topicLink = await this.http.post<TopicLink>(`http://34.122.220.146:8080/topicLinks`, topicLink, this.httpOptions).toPromise();
+    topicLink = await this.http.post<TopicLink>(`https://34.122.220.146:8080/topicLinks`, topicLink, this.httpOptions).toPromise();
     return topicLink;
   }
 
   async updateTopicLink(topicLink:TopicLink){
-    topicLink = await this.http.put<TopicLink>(`http://34.122.220.146:8080/topicLinks`, topicLink, this.httpOptions).toPromise();
+    topicLink = await this.http.put<TopicLink>(`https://34.122.220.146:8080/topicLinks`, topicLink, this.httpOptions).toPromise();
     return topicLink;
   }
 
   async removeTopicLink(topicLinkId:number){
-    const result = await this.http.delete(`http:///34.122.220.146:8080/topicLinks/${topicLinkId}`, this.httpOptions).toPromise();
+    const result = await this.http.delete(`https:///34.122.220.146:8080/topicLinks/${topicLinkId}`, this.httpOptions).toPromise();
     return result;
   }
+
+
 }

@@ -21,33 +21,66 @@ export class StackLinkService {
     private jwtService:JwtService
     ) { }
 
+  // async getAllStackLinks(){
+  //   const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks`,this.httpOptions).toPromise();
+  //   return stackLinks;
+  // }
+
+  // async getStackLinkById(stackId:number){
+  //   const stackLink:StackLink = await this.http.get<StackLink>(`http://34.122.220.146:8080/stackLinks/${stackId}`,this.httpOptions).toPromise();
+  //   return stackLink;
+  // }
+
+  // async getStackLinksByLearnerId(learnerId:number):Promise<StackLink[]>{
+  //   const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks?learnerId=${learnerId}`,this.httpOptions).toPromise();
+  //   return stackLinks;
+  // }
+
+  // async createStackLink(stackLink:StackLink){
+  //   stackLink = await this.http.post<StackLink>(`http://34.122.220.146:8080/stackLinks`, stackLink, this.httpOptions).toPromise();
+  //   return stackLink;
+  // }
+
+  // async updateStackLink(stackLink:StackLink){
+  //   stackLink = await this.http.put<StackLink>(`http://34.122.220.146:8080/stackLinks`, stackLink, this.httpOptions).toPromise();
+  //   return stackLink;
+  // }
+
+  // async removeStackLink(stackLinkId:number){
+  //   const result = await this.http.delete(`http:///34.122.220.146:8080/stackLinks/${stackLinkId}`, this.httpOptions).toPromise();
+  //   return result;
+  // }
+
+
   async getAllStackLinks(){
-    const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks`,this.httpOptions).toPromise();
+    const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`https://34.122.220.146:8080/stackLinks`,this.httpOptions).toPromise();
     return stackLinks;
   }
 
   async getStackLinkById(stackId:number){
-    const stackLink:StackLink = await this.http.get<StackLink>(`http://34.122.220.146:8080/stackLinks/${stackId}`,this.httpOptions).toPromise();
+    const stackLink:StackLink = await this.http.get<StackLink>(`https://34.122.220.146:8080/stackLinks/${stackId}`,this.httpOptions).toPromise();
     return stackLink;
   }
 
   async getStackLinksByLearnerId(learnerId:number):Promise<StackLink[]>{
-    const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`http://34.122.220.146:8080/stackLinks?learnerId=${learnerId}`,this.httpOptions).toPromise();
+    const stackLinks:StackLink[] = await this.http.get<StackLink[]>(`https://34.122.220.146:8080/stackLinks?learnerId=${learnerId}`,this.httpOptions).toPromise();
     return stackLinks;
   }
 
   async createStackLink(stackLink:StackLink){
-    stackLink = await this.http.post<StackLink>(`http://34.122.220.146:8080/stackLinks`, stackLink, this.httpOptions).toPromise();
+    stackLink = await this.http.post<StackLink>(`https://34.122.220.146:8080/stackLinks`, stackLink, this.httpOptions).toPromise();
     return stackLink;
   }
 
   async updateStackLink(stackLink:StackLink){
-    stackLink = await this.http.put<StackLink>(`http://34.122.220.146:8080/stackLinks`, stackLink, this.httpOptions).toPromise();
+    stackLink = await this.http.put<StackLink>(`https://34.122.220.146:8080/stackLinks`, stackLink, this.httpOptions).toPromise();
     return stackLink;
   }
 
   async removeStackLink(stackLinkId:number){
-    const result = await this.http.delete(`http:///34.122.220.146:8080/stackLinks/${stackLinkId}`, this.httpOptions).toPromise();
+    const result = await this.http.delete(`https:///34.122.220.146:8080/stackLinks/${stackLinkId}`, this.httpOptions).toPromise();
     return result;
   }
+
+
 }
