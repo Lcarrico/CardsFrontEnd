@@ -34,7 +34,7 @@ export class StackComponent implements OnInit {
   async createStack(){
     let stack:Stack = new Stack(0,this.stackName,this.description);
     stack = await this.stackService.createStack(stack);
-    this.stackLinkService.createStackLink(new StackLink(0,this.userId,stack.stackId,"Creator"));
+    await this.stackLinkService.createStackLink(new StackLink(0,this.userId,stack.stackId,"Creator"));
     // this.deleteStack();
     this.refresh();
   }
