@@ -95,14 +95,13 @@ export class CardEditComponent implements OnInit {
     if (Number(this.card.cardId) == 0){
       // create the card
       this.card = await this.cardService.createCard(this.card);
+      this.cardLinkService.createCardLink(new CardLink(0, Number(this.card.cardId), 
+        Number(this.stackId)));
     } else {
       // update the card info
       console.log(this.card);
       this.card = await this.cardService.updateCard(this.card);
     }
-
-    this.cardLinkService.createCardLink(new CardLink(0, Number(this.card.cardId), 
-      Number(this.stackId)));
 
     console.log(this.card);
 
