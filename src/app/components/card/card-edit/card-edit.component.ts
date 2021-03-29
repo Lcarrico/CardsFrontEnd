@@ -95,7 +95,7 @@ export class CardEditComponent implements OnInit {
     if (Number(this.card.cardId) == 0){
       // create the card
       this.card = await this.cardService.createCard(this.card);
-      this.cardLinkService.createCardLink(new CardLink(0, Number(this.card.cardId), 
+      await this.cardLinkService.createCardLink(new CardLink(0, Number(this.card.cardId), 
         Number(this.stackId)));
     } else {
       // update the card info
